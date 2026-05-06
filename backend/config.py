@@ -6,7 +6,7 @@ load_dotenv()
 # Google Cloud / Vertex AI
 GOOGLE_CLOUD_PROJECT = os.getenv("GOOGLE_CLOUD_PROJECT")
 GOOGLE_CLOUD_LOCATION = os.getenv("GOOGLE_CLOUD_LOCATION", "us-central1")
-VERTEX_MODEL = os.getenv("VERTEX_MODEL", "gemini-1.5-pro")
+VERTEX_MODEL = os.getenv("VERTEX_MODEL", "gemini-1.5-pro-001")
 
 # Qdrant
 QDRANT_HOST = os.getenv("QDRANT_HOST", "localhost")
