@@ -1,0 +1,51 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #080C14;
+  --surface: #0F1623;
+  --surface-2: #162032;
+  --border: #1E2D42;
+  --border-bright: #2A3F5C;
+  --text: #E8EFF8;
+  --text-muted: #5A7A9E;
+  --text-dim: #3A5472;
+  --amber: #F59E0B;
+  --amber-dim: #92610A;
+  --green: #10B981;
+  --green-dim: #0A6646;
+  --red: #EF4444;
+  --red-dim: #8B1A1A;
+  --blue: #3B82F6;
+  --mono: 'IBM Plex Mono', monospace;
+  --sans: 'DM Sans', sans-serif;
+}
+
+html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--sans); }
+
+#root { min-height: 100vh; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 3px; }
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes agent-run {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.fade-up { animation: fade-up 0.4s ease forwards; }
