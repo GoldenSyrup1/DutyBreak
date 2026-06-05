@@ -1,64 +1,111 @@
 C:\Users\srira\OneDrive\Documents\STARTUPS\DutyBreak\backend\venv\Lib\site-packages\langgraph\checkpoint\base\__init__.py:24: LangChainPendingDeprecationWarning: The default value of `allowed_objects` will change in a future version. Pass an explicit value (e.g., allowed_objects='messages' or allowed_objects='core') to suppress this warning.
   from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
-INFO:     Started server process [36196]
+INFO:     Started server process [5780]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-INFO:     127.0.0.1:63497 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57664 - "GET /health HTTP/1.1" 200 OK
 INFO:backend.main:Compliance check: Lithium-ion battery packs for electric bicycles | CN \u2192 DE
 INFO:backend.agents.classifier:ClassifierAgent: classifying 'Lithium-ion battery packs for electric bicycles'
-INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 404 Not Found"
-ERROR:backend.agents.classifier:ClassifierAgent error: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
-INFO:backend.agents.tariff:TariffAgent: looking up tariffs for HS 
-INFO:httpx:HTTP Request: GET https://api.wto.org/timeseries/v1/data?i=HS_M_0010&r=DE&p=CN&pc=&fmt=json&max=1 "HTTP/1.1 401 Access Denied"
-INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 404 Not Found"
-ERROR:backend.agents.tariff:TariffAgent error: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
-INFO:backend.agents.compliance:ComplianceAgent: mapping requirements for HS 
-INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 404 Not Found"
-ERROR:backend.agents.compliance:ComplianceAgent error: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 200 OK"
+INFO:backend.agents.classifier:ClassifierAgent: HS code -> 850760
+INFO:backend.agents.tariff:TariffAgent: looking up tariffs for HS 850760
+INFO:httpx:HTTP Request: GET https://api.wto.org/timeseries/v1/data?i=HS_M_0010&r=DE&p=CN&pc=850760&fmt=json&max=1 "HTTP/1.1 401 Access Denied"
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 200 OK"
+INFO:backend.agents.compliance:ComplianceAgent: mapping requirements for HS 850760
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 200 OK"
 INFO:backend.agents.sanctions:SanctionsAgent: screening CN -> DE
-INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 404 Not Found"
-ERROR:backend.agents.sanctions:SanctionsAgent error: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 200 OK"
 INFO:backend.agents.document:DocumentAgent: generating compliance brief
-INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 404 Not Found"
-ERROR:backend.agents.document:DocumentAgent error: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
-WARNING:backend.main:Pipeline completed with errors: ["classifier: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}", "tariff: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}", "compliance: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}", "sanctions: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}", "document: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}"]
-INFO:     127.0.0.1:52472 - "POST /api/compliance/check HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 200 OK"
+INFO:backend.agents.document:DocumentAgent: risk=MEDIUM
+[GEMINI RAW] ```json
+{
+  "hs_code": "850760",
+  "hs_description": "Lithium-ion accumulators",
+  "confidence": "HIGH",
+  "reasoning": "Lithium-ion battery packs, even when specialized for electric bicycles, are cla
+[GEMINI RAW] {"mfn_rate":"2.7%","preferential_rate":null,"trade_agreement":null,"estimated_duty_usd":null,"notes":"The third-country duty rate (MFN) for EU import of HS 850760 is 2.7%. Germany applies a standard I
+[GEMINI RAW] {
+  "required_certificates": [
+    "UN 38.3 Test Summary Report",
+    "CE Declaration of Conformity (DoC)",
+    "RoHS Certificate of Compliance",
+    "REACH Compliance Declaration",
+    "Safety Data S
+[GEMINI RAW] {"is_sanctioned":false,"risk_level":"MEDIUM","flags":["MISSING_COUNTERPARTY_INFO"],"screened_lists":["OFAC SDN","EU Consolidated","UN Security Council"],"recommended_action":"ENHANCED_DUE_DILIGENCE","
+[GEMINI RAW] {"summary":"Importing lithium-ion battery packs from China to Germany is subject to a 2.7% MFN customs duty and 19% German import VAT, with strict compliance required under the German Battery Act (Bat
+INFO:     127.0.0.1:57667 - "POST /api/compliance/check HTTP/1.1" 200 OK
 INFO:backend.main:Compliance check: Ceramic kitchenware including plates bowls and cups | VN \u2192 US
 INFO:backend.agents.classifier:ClassifierAgent: classifying 'Ceramic kitchenware including plates bowls and cups'
-INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 404 Not Found"
-ERROR:backend.agents.classifier:ClassifierAgent error: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
-INFO:backend.agents.tariff:TariffAgent: looking up tariffs for HS 
-INFO:httpx:HTTP Request: GET https://api.wto.org/timeseries/v1/data?i=HS_M_0010&r=US&p=VN&pc=&fmt=json&max=1 "HTTP/1.1 401 Access Denied"
-INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 404 Not Found"
-ERROR:backend.agents.tariff:TariffAgent error: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
-INFO:backend.agents.compliance:ComplianceAgent: mapping requirements for HS 
-INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 404 Not Found"
-ERROR:backend.agents.compliance:ComplianceAgent error: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 200 OK"
+INFO:backend.agents.classifier:ClassifierAgent: HS code -> 6912.00
+INFO:backend.agents.tariff:TariffAgent: looking up tariffs for HS 6912.00
+INFO:httpx:HTTP Request: GET https://api.wto.org/timeseries/v1/data?i=HS_M_0010&r=US&p=VN&pc=6912.0&fmt=json&max=1 "HTTP/1.1 401 Access Denied"
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 200 OK"
+INFO:backend.agents.compliance:ComplianceAgent: mapping requirements for HS 6912.00
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 200 OK"
 INFO:backend.agents.sanctions:SanctionsAgent: screening VN -> US
-INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 404 Not Found"
-ERROR:backend.agents.sanctions:SanctionsAgent error: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 200 OK"
 INFO:backend.agents.document:DocumentAgent: generating compliance brief
-INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 404 Not Found"
-ERROR:backend.agents.document:DocumentAgent error: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
-WARNING:backend.main:Pipeline completed with errors: ["classifier: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}", "tariff: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}", "compliance: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}", "sanctions: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}", "document: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}"]
-INFO:     127.0.0.1:52472 - "POST /api/compliance/check HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 200 OK"
+INFO:backend.agents.document:DocumentAgent: risk=MEDIUM
+[GEMINI RAW] {"hs_code": "6912.00", "hs_description": "Ceramic tableware, kitchenware, other household articles and toilet articles, other than of porcelain or china", "confidence": "MEDIUM", "reasoning": "The des
+[GEMINI RAW] {
+  "mfn_rate": "4.5% - 9.8%",
+  "preferential_rate": null,
+  "trade_agreement": null,
+  "estimated_duty_usd": null,
+  "notes": "HS Code 6912.00 covers ceramic tableware, kitchenware, and other househ
+[GEMINI RAW] {
+  "required_certificates": [
+    "FDA Certificate of Analysis (Lead and Cadmium Testing)",
+    "Certificate of Origin",
+    "Commercial Invoice",
+    "Packing List",
+    "Bill of Lading / Air Waybil
+[GEMINI RAW] {
+  "is_sanctioned": false,
+  "risk_level": "LOW",
+  "flags": [],
+  "screened_lists": [
+    "OFAC SDN",
+    "EU Consolidated",
+    "UN Security Council"
+  ],
+  "recommended_action": "PROCEED",
+  "note
+[GEMINI RAW] {
+  "summary": "Importing ceramic kitchenware from Vietnam to the US is subject to standard MFN duty rates between 4.5% and 9.8% with no preferential tariff treatment. The primary compliance challenge
+INFO:     127.0.0.1:57667 - "POST /api/compliance/check HTTP/1.1" 200 OK
 INFO:backend.main:Compliance check: Industrial steel pipes | IR \u2192 US
 INFO:backend.agents.classifier:ClassifierAgent: classifying 'Industrial steel pipes'
-INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 404 Not Found"
-ERROR:backend.agents.classifier:ClassifierAgent error: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
-INFO:backend.agents.tariff:TariffAgent: looking up tariffs for HS 
-INFO:httpx:HTTP Request: GET https://api.wto.org/timeseries/v1/data?i=HS_M_0010&r=US&p=IR&pc=&fmt=json&max=1 "HTTP/1.1 401 Access Denied"
-INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 404 Not Found"
-ERROR:backend.agents.tariff:TariffAgent error: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
-INFO:backend.agents.compliance:ComplianceAgent: mapping requirements for HS 
-INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 404 Not Found"
-ERROR:backend.agents.compliance:ComplianceAgent error: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 200 OK"
+INFO:backend.agents.classifier:ClassifierAgent: HS code -> 7306.30
+INFO:backend.agents.tariff:TariffAgent: looking up tariffs for HS 7306.30
+INFO:httpx:HTTP Request: GET https://api.wto.org/timeseries/v1/data?i=HS_M_0010&r=US&p=IR&pc=7306.3&fmt=json&max=1 "HTTP/1.1 401 Access Denied"
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 200 OK"
+INFO:backend.agents.compliance:ComplianceAgent: mapping requirements for HS 7306.30
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 200 OK"
 INFO:backend.agents.sanctions:SanctionsAgent: screening IR -> US
-INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 404 Not Found"
-ERROR:backend.agents.sanctions:SanctionsAgent error: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 200 OK"
 INFO:backend.agents.document:DocumentAgent: generating compliance brief
-INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 404 Not Found"
-ERROR:backend.agents.document:DocumentAgent error: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
-WARNING:backend.main:Pipeline completed with errors: ["classifier: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}", "tariff: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}", "compliance: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}", "sanctions: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}", "document: Gemini API error: {'error': {'code': 404, 'message': 'This model models/gemini-2.0-flash is no longer available. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}"]
-INFO:     127.0.0.1:52472 - "POST /api/compliance/check HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=AIzaSyAQqMKyB8h0KPnkh2dvHke3363PB7f0vyk "HTTP/1.1 200 OK"
+INFO:backend.agents.document:DocumentAgent: risk=BLOCKED
+[GEMINI RAW] {"hs_code": "7306.30", "hs_description": "Other tubes, pipes and hollow profiles, welded, of circular cross-section, of iron or non-alloy steel", "confidence": "MEDIUM", "reasoning": "Steel pipes fall
+[GEMINI RAW] {
+  "mfn_rate": "0%",
+  "preferential_rate": null,
+  "trade_agreement": null,
+  "estimated_duty_usd": null,
+  "notes": "The base MFN rate for HS 7306.30 in the US is Free (0%). However, imports from I
+[GEMINI RAW] {
+  "required_certificates": [
+    "OFAC Specific License",
+    "Mill Test Certificate (MTC) conforming to ASTM/ASME standards",
+    "Certificate of Origin",
+    "EPA TSCA Certification (if applicable
+[GEMINI RAW] {"is_sanctioned":true,"risk_level":"BLOCKED","flags":["OFAC comprehensive embargo on origin country (Iran)","Direct import of Iranian-origin goods to the US is prohibited","UN sanctions measures apply
+[GEMINI RAW] {
+  "summary": "This import transaction is strictly prohibited under the U.S. Department of the Treasury's OFAC Iranian Transactions and Sanctions Regulations (31 CFR Part 560). Even if an extraordina
+INFO:     127.0.0.1:57667 - "POST /api/compliance/check HTTP/1.1" 200 OK

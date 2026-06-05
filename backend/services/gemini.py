@@ -1,7 +1,7 @@
 import httpx
 from backend.config import GEMINI_API_KEY, VERTEX_MODEL
 
-GEMINI_URL = "https://generativelanguage.googleapis.com/v1/models/{model}:generateContent"
+GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 
 
 async def generate(prompt: str) -> str:
