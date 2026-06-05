@@ -9,6 +9,7 @@ build/
 
 # Env
 .env
+server.log
 
 # Node
 node_modules/
