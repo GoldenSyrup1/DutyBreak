@@ -6,10 +6,10 @@ export default defineConfig({
   server: {
     port: 5173,
     proxy: {
-      '/api': {
-        target: 'http://localhost:8001',
-        changeOrigin: true,
-      }
-    }
+  '/api': {
+    target: 'https://dutybreak-371750677349.us-central1.run.app',
+    changeOrigin: true,
+  }
+}
   }
 })
