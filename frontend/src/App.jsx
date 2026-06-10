@@ -25,7 +25,7 @@ export default function App() {
     }, 1200)
 
     try {
-      const res = await fetch('/api/compliance/check', {
+      const res = await fetch('https://dutybreak-371750677349.us-central1.run.app/api/compliance/check', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
